@@ -14,10 +14,16 @@ function App() {
     ]);
   }
 
+  function TodoDeleteHandler(todoId: string) {
+    setTodo(prevTodos=>{
+      return prevTodos.filter(todo=>todo.id !== todoId)
+    });
+  }
+
   return (
     <div>
       <NewTodo onAddTodo={todoAddHandler} />
-      <TodoList items={todos} />
+      <TodoList items={todos} onDeleteTodo={TodoDeleteHandler} />
     </div>
   );
 }
