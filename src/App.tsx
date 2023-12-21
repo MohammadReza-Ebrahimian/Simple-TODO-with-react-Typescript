@@ -1,9 +1,12 @@
 import "./app.css";
+import TodoList from "./components/TodoList";
 
 function App() {
+  const todos = [{ id: "t1", text: "Finish the course" }];
+
   return (
     <div>
-      <h1>HI</h1>
+      <TodoList items={todos}/>
     </div>
   );
 }
